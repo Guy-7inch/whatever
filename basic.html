@@ -1,21 +1,28 @@
 <html>
     <head>
         <title> Practise this shit</title>
+        <style>
+            #mybutton{ background-color: rgba(0,0,0,0);
+    position:absolute;
+top:0; left:0; width: 100vw; height:100vh;}
+        </style>
     </head>
 <body>
     <h1> HELLO</h1>
+<form> <button id="myButton"></button></form>
     <form action = "" method="get" id="nameForm">
         <label> name : <input type = "text" id="name" name=" name " placeholder= "enter your name" required></form>
-           <input type = "submit" >
+           <input type = "submit" id="quit" >
     <script>
         let i=0;
-        document.addEventListener('DOMContentLoaded',
+        document.getElementById('myButton').onclick =
          function ad(){
             let pop =   window.open ('', 'can bne','width=400,height=300,resizable=yes');
-            pop.close;
-         for(let i = 122; i<= 1999;i+=100){pop.resizeTo(i,i+200);if(i>=1800)i=100; }
+          for(let i = 122; i<= 1999;i+=100){
+            document.getElementById('quit').onclick = function stop(){ i=2000; pop.close();}
+            pop.resizeTo(i,i+200);if(i>=1800)i=100; }
          
-        });
+        };
        </script>
 </body>
 </html>
